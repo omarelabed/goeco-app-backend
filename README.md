@@ -3,7 +3,7 @@ This application was created using django framework and runs with python.
 
 ## Getting started
 
-Running this application requires python, django and other libraries.
+Running this application requires python, django and other libraries:
 
     $ virtualenv env
     $ source env/bin/activate
