@@ -3,11 +3,14 @@ This application was created using django framework and runs with python.
 
 ## Getting started
 
-Running this application requires python, django and other libraries:
+### Install python, django and other libraries
 
     $ virtualenv env
     $ source env/bin/activate
     (env)$ install -r requirements.txt
+
+### Set up mongodb
+Follow [the steps described here](http://docs.mongodb.org/manual/tutorial/#installation).
 
 ### To get started
 
@@ -15,7 +18,7 @@ Check out the [django rest framework website](http://www.django-rest-framework.o
 
 ### If you have everything installed
 
-Navigate to the project folder (`goeco/`) on the command line and run:
+Run mongodb then navigate to the project folder (`goeco/`) and on the command line and run:
 
     $ python manage.py runserver
 
