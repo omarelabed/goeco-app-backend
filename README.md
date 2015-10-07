@@ -15,7 +15,7 @@ Check out the [django rest framework website](http://www.django-rest-framework.o
 
 ### If you have everything installed
 
-Navigate to the project folder on the command line and run:
+Navigate to the project folder (`goeco/`) on the command line and run:
 
     $ python manage.py runserver
 
