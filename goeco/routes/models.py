@@ -1,40 +1,63 @@
 from django.db import models
+from djangotoolbox.fields import ListField, EmbeddedModelField
+
+class Activity(models.Model):
+	##IDSIA
+	#       {  
+	#          "activityMoves":"walking",
+	activityMoves = models.CharField(max_length=200)
+	#          "activityIDSIA":"walking",
+	activityMoves = models.CharField(max_length=200)
+	#          "activity":"walking",
+	activity = models.CharField(max_length=200)
+	#          "validated":true,
+	validated = models.BooleanField()
+	#          "startTime":"20121212T071430+0200",
+	startTime = models.DateTimeField()
+	#          "endTime":"20121212T072732+0200",
+	endTime = models.DateTimeField()
+	#          "duration":782,
+	duration = models.IntegerField()
+	#          "distance":1251,
+	distance = models.IntegerField()
+	#          "trackPoints":[ ... ]
+	trackPoints = ListField(EmbeddedModelField('TrackPoint'))
+	#       },
+	##/IDSIA
+
+
+class TrackPoint(models.Model):
+	##IDSIA
+	#             {  
+	#                "lat":55.55555,
+	lat = models.FloatField()
+	#                "lon":33.33333,
+	lon = models.FloatField()
+	#                "time":"20121212T071430+0200"
+	time = models.DateTimeField()
+	#             },
+	##/IDSIA
+
 
 class Route(models.Model):
+	##LOCAL
 	# id
-	# TODO
+
 	# user_id
-	# user = models.ForeignKey(User)
+	user = EmbeddedModelField('User')
+	##/LOCAL
 
-	# km
-	km = models.PositiveIntegerField()
-	
-	# start_time date
-	start_time = models.DateTimeField('date published')
-
-	# week
-	week = models.PositiveIntegerField()
-
-	# duration
-	week_duration = models.PositiveIntegerField()
-
-	# co2
-	co2 = models.PositiveIntegerField()
-	
-	# energy
+	##IDSIA
+	# {
+	#    "startTime":"20121212T071430+0200",
+	startTime = models.DateTimeField('date published')
+	#    "endTime":"20121212T074617+0200",
+	endTime = models.DateTimeField('date published')
+	#    "co2":20,
+	co2 = models.PositiveIntegerField()	
+	#    "energy":10,
 	energy = models.PositiveIntegerField()
-
-	# reason
-	reason = models.CharField(max_length=200)
-
-	# means
-	# TODO: vedere se conviene avere un model dedicato ai means
-	reason = models.CharField(max_length=200)
-
-	# status
-	# TODO: vedere se conviene avere un model dedicato agli status
-	# 		(per selezionare da piu' opzioni, assegnare colori, ecc.)
-	status = models.CharField(max_length=200)
-
-	# path gmap ??
-	# TODO: ??
+	#    "activities":[ ... ]
+	activities = ListField(EmbeddedModelField('Activity'))
+	# }
+	##/IDSIA

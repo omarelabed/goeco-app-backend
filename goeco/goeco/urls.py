@@ -7,6 +7,7 @@ router = routers.DefaultRouter()
 router.register(r'users', quickviews.UserViewSet)
 router.register(r'groups', quickviews.GroupViewSet)
 router.register(r'routes', routeviews.RouteViewSet)
+router.register(r'activities', routeviews.ActivityViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.

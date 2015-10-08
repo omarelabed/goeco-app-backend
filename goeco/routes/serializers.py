@@ -1,7 +1,15 @@
-from models import Route
+from models import Route, Activity
 from rest_framework import serializers
 
+
+class ActivitySerializer(serializers.HyperlinkedModelSerializer):
+	class Meta:
+		model = Activity
+		fields = ('activityMoves','activityMoves','activity','validated','startTime','endTime','duration','distance','trackPoints')
+
 class RouteSerializer(serializers.HyperlinkedModelSerializer):
+	activities = ActivitySerializer(many=True)
 	class Meta:
 		model = Route
-		fields = ('co2', 'energy', 'id', 'km', 'reason', 'start_time', 'status', 'week', 'week_duration')
+		fields = ('startTime', 'endTime', 'co2', 'energy', 'activities')
+		depth = 1
