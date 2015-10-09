@@ -1,6 +1,11 @@
+from django.contrib.auth.models import User
 from models import *
 from rest_framework import viewsets
 from routes.serializers import *
+
+class UserViewSet(viewsets.ModelViewSet):
+	queryset = User.objects.all()
+	serializer_class = UserSerializer
 
 
 class EcoUserViewSet(viewsets.ModelViewSet):

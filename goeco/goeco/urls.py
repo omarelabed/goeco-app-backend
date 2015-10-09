@@ -6,7 +6,7 @@ from routes import views as routeviews
 router = routers.DefaultRouter()
 
 # basic Django
-router.register(r'users', quickviews.UserViewSet)
+router.register(r'users', routeviews.UserViewSet)
 router.register(r'groups', quickviews.GroupViewSet)
 
 # GoEco!
