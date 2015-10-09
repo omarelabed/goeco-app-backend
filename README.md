@@ -4,7 +4,7 @@ This application was created using django framework and runs with python.
 ## Getting started
 
 ### Install `pip` and `virtualenv` (if not installed yet)
-If not already installed, see (this documentation)[http://pip.readthedocs.org/en/stable/installing/] on how to install `pip`.
+If not already installed, see [this documentation](http://pip.readthedocs.org/en/stable/installing/) on how to install `pip`.
 
     $ [sudo] pip install virtualenv
 
