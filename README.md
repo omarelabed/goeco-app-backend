@@ -8,7 +8,7 @@ If not already installed, see [this documentation](http://pip.readthedocs.org/en
 
     $ [sudo] pip install virtualenv
 
-See the (documentation)[https://virtualenv.pypa.io/en/latest/installation.html] for more.
+See the [documentation](https://virtualenv.pypa.io/en/latest/installation.html) for more.
 
 ### Install python, django and other libraries
 
