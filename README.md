@@ -1,5 +1,5 @@
 # goeco-app-backend
-This application was created using [django framework](https://www.djangoproject.com) and runs with [python](https://www.python.org/).
+This application was created using [django framework](https://www.djangoproject.com) which runs on [python](https://www.python.org/).
 
 ## Getting started
 
