@@ -79,20 +79,15 @@ WSGI_APPLICATION = 'goeco.wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
 DATABASES = {
-    'default' : {
-        'ENGINE' : 'django_mongodb_engine',
-        'NAME' : 'my_database',
-        # 'USER': '',                      # Not used with sqlite3.
-        # 'PASSWORD': '',                  # Not used with sqlite3.
-        # 'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        # 'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'goecodb',
+        'USER': 'admin',
+        'PASSWORD': 'password',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
